@@ -12,7 +12,7 @@
 					value="com.mysql.jdbc.Driver" />
 	
 	     <property name="javax.persistence.jdbc.url" 
-	         			value="jdbc:mysql://192.168.0.10/financas" />
+	         			value="jdbc:mysql://10.10.37.35/financas" />
 	
 	     <property name="javax.persistence.jdbc.user" 
 	     					value="root" />

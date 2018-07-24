@@ -1,4 +1,4 @@
-package br.com.caelum.financas.teste;
+package br.com.alura.financas.teste;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;

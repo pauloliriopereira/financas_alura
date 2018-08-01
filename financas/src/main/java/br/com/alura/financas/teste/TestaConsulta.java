@@ -3,7 +3,7 @@ package br.com.alura.financas.teste;
 import java.util.List;
 
 import javax.persistence.EntityManager;
-import javax.persistence.Query;
+import javax.persistence.TypedQuery;
 
 import br.com.alura.financas.modelo.Categoria;
 import br.com.alura.financas.modelo.Movimentacao;
@@ -21,7 +21,7 @@ public class TestaConsulta
 
         String jpql = "select m from Movimentacao m join m.categoria c where c = :pCategoria";
 
-        Query query = em.createQuery(jpql);
+        TypedQuery<Movimentacao> query = em.createQuery( jpql, Movimentacao.class );
         query.setParameter("pCategoria", categoria);
 
         List<Movimentacao> resultados = query.getResultList();

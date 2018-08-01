@@ -3,7 +3,7 @@ package br.com.alura.financas.teste;
 import java.util.List;
 
 import javax.persistence.EntityManager;
-import javax.persistence.Query;
+import javax.persistence.TypedQuery;
 
 import br.com.alura.financas.modelo.Conta;
 import br.com.alura.financas.util.JPAUtil;
@@ -16,7 +16,7 @@ public class TesteTodasAsMovimentacoesDasContas
 		em.getTransaction().begin();
 		
 		String jpql = "select distinct c from Conta c left join fetch c.movimentacoes";
-		Query query = em.createQuery( jpql );
+		TypedQuery<Conta> query = em.createQuery( jpql, Conta.class );
 		
 		List<Conta> contas = query.getResultList();
 		

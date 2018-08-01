@@ -3,7 +3,7 @@ package br.com.alura.financas.teste;
 import java.util.List;
 
 import javax.persistence.EntityManager;
-import javax.persistence.Query;
+import javax.persistence.TypedQuery;
 
 import br.com.alura.financas.modelo.Conta;
 import br.com.alura.financas.modelo.Movimentacao;
@@ -21,7 +21,7 @@ public class TesteJPQL
 	    em.getTransaction().begin();
 
 	    String jpql = "select m from Movimentacao m where m.conta = :pConta" + " and m.tipo = :pTipo" + " order by m.valor desc";
-	    Query query = em.createQuery( jpql );
+	    TypedQuery<Movimentacao> query = em.createQuery( jpql, Movimentacao.class );
 	    query.setParameter( "pConta", conta );
 	    query.setParameter( "pTipo", TipoMovimentacao.SAIDA );
 	    

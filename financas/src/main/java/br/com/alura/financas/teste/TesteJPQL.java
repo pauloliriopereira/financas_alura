@@ -32,8 +32,7 @@ public class TesteJPQL
 	        System.out.println( "Descricao: " + movimentacao.getDescricao() );
 	        System.out.println( "Conta.id: " + movimentacao.getConta().getId() );
 	    } 
-	    
-	    em.getTransaction().commit();
+
 	    em.close();
 	}
 }
